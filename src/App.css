@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@media (max-width:700px){
+
+  *{
+    margin:0;
+    box-sizing:border-box;
+  }
+  #root{
+  font-family:'Poppins',sans-serif;
+  color:white;
+  width:100%;
+  display:flex;
+   flex-direction:column;
+}
+#root span{
+  color:rgb(0, 255, 0);
+}
+img{
+  background:transparent;
+  border:none;
+}
+.image{
+  min-height:100vh;
+}
+.NavbarContent{
+  padding:10px;
+  display:flex;
+  width:100%;
+  justify-content:center;
+  align-items:center;
+  background:green;
+  gap:20px;
+  position:relative;
+}
+
+.MenuBtn{
+  position:absolute;
+  top:15px;
+  left:10px;
+}
+.MenuBtn img{
+  width:20px;
+}
+.BackGround{
+  position:relative;
+  background: url('./src/assets/image1.jpeg');
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  z-index:0;
+  height:300px;
+
+  
+}
+.HeroContent{
+  position:absolute;
+  color:white;
+  width:250px;
+  left:20px;
+  top:220px;
+  
+ 
+}
+.HeroContent p{
+  font-size:smaller;
+}
+.NavBtns{
+  position:fixed;
+  bottom:0;
+  display:flex;
+  justify-content:space-evenly;
+  width:100%;
+  padding:20px;
+  background:rgba(0, 229, 0, 0.478);
+  backdrop-filter: blur(20px);
+  
+
+}
+.NavBtns img{
+  width:20px;
+}
+.CatalogueGrid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(150px,200px));
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:20px;
+}
+.CardContainer{
+  border:1px solid grey;
+  width:200px;
+  position:relative;
+  color:black;
+  border-radius:5px;
+  
+
+}
+.SkinImage{
+  width:100%;
+  height:100px;
+  object-fit:cover;
+}
+.SkinDetails{
+  text-align:center;
+}
+.ImageTrack{
+ display:flex;
+ width:max-content;
+  gap:20px;
+  margin-top:10px;
+  animation:TrendsScroll 20s linear infinite;
+ 
+}
+.ImageSlider h3{
+  color:black;
+  padding:10px;
+
+}
+.text{
+  color:black;
+  display:flex;
+  justify-content:center;
+}
+.TrendSkin{
+  border:1px solid grey;
+  border-radius:5px;
+  width:150px;
+  background:white;
+}
+.Image{
+  width:100%;
+  height:100px;
+  object-fit:cover;
+}
+.Description{
+  color:black;
+  text-align:center;
+}
+.ImageSlider{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  overflow:hidden;
+   background:aliceblue;
+}
+.ImageGroup{
+  display:flex;
+  gap:20px;
+  padding-right:20px;
+}
+@keyframes TrendsScroll{
+  0%{
+    transform:translateX(0);
+  }
+  100%{
+    transform:translateX(-50%);
+  }
+}
+.NavigationBtn{
+  padding:10px;
+  display:flex;
+  justify-content:center;
+}
+.NavigationBtn button{
+  padding:10px 20px;
+  border-radius:5px;
+  border:none;
+  background:rgb(105, 243, 105);
+}
+.NavigationBtn button:active{
+  background:hsl(120, 85%, 90%);
+}
+}
+.links{
+  color:black;
+  background:rgba(240, 248, 255, 0.715);
+  backdrop-filter:blur(20px);
+  display:flex;
+  flex-direction:column;
+
+
+}
+.links li{
+      list-style:none;
+      padding:15px;
+      position:relative;
+}
+.links li:hover{
+  cursor:pointer;
+}
+.SideBar{
+ border:none;
+ border-radius:10px;
+ position:absolute;
+ top:49px;
+ left:0;
+ width:100%;
+
+}
+.CloseBtn{
+  position:absolute;
+  top:10px;
+  left:400px;
+}
+.container{
+  padding-bottom:70px;
+  background:aliceblue;
+}
+.PublishForm{
+  color:black;
+  width:100%;
+  padding:20px;
+
+}
+.InputFields{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+
+}
+.Buttons{
+  display:flex;
+  justify-content:space-between;
+}
+.Buttons button{
+  padding:20px;
+  border:none;
+  border-radius:5px;
+}
+.PublishBtn{
+  background:rgba(10, 222, 10, 0.665);
+}
+.DeleteBtn{
+  background:red;
+ 
+}
+input ,select{
+  padding:20px;
+   outline:1px solid grey;
+      border-radius:5px;
+      border:none;
+   
+}
+textarea{
+  height:150px;
+  padding:10px;
+   outline:1px solid grey;
+       border:none;
+}
+.Name{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.PublishBtn:active ,.DeleteBtn:active{
+  background:white;
+}
+.PublishForm h3{
+  margin-bottom:10px;
+}
+.Media{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.Media input{
+  background:white;
+}
