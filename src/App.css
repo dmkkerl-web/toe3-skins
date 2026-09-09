@@ -268,3 +268,21 @@ textarea{
 .Media input{
   background:white;
 }
+.Body{
+  padding-bottom:70px;
+}
+.DownloadBtn{
+  display:flex;
+  justify-content:space-evenly;
+  padding:10px;
+}
+.DownloadBtn button{
+  background:rgba(10, 220, 10, 0.808);
+  border:none;
+  border-radius:5px;
+}
+.LightBox{
+  border:1px solid lightgreen;
+  width:350px;
+  
+}

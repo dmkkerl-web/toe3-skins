@@ -1,3 +1,6 @@
+import Preview from './Preview.jsx'
+
+import { useState } from 'react';
 function SkinCard(props){
     return(
         <div className="CardContainer">
@@ -8,6 +11,11 @@ function SkinCard(props){
             </div>
             <div className="SkinDetails">
                 {props.SkinDetails}
+            </div>
+            <div className="DownloadBtn">
+                <a href={props.image} download><img src="src\assets\import-icon.png"
+                width="20px"></img></a>
+                <button onClick={props.preview}>Preview</button>
             </div>
         </div>
     )
@@ -21,6 +29,11 @@ function Cards({children}){
     )
 }
 export default function Catalogue(){
+    const [Preview, setPreview]=useState(false);
+    function onPreview(){
+        setPreview(true);
+    }
+    
     return(
         <Cards>
         <SkinCard 
@@ -28,25 +41,37 @@ export default function Catalogue(){
         SkinDetails="Hot Genshin Impact skin for Moon-THA"
         width="200px"
         height="100px"
+        preview={onPreview}
+
         />
          <SkinCard 
         image="/src/assets/image1"
         SkinDetails="Hot Genshin Impact skin for Moon-THA"
         width="200px"
         height="100px"
+        preview={onPreview}
         />
          <SkinCard 
         image="/src/assets/image1"
         SkinDetails="Hot Genshin Impact skin for Moon-THA"
         width="200px"
         height="100px"
+        preview={onPreview}
         />
          <SkinCard 
         image="/src/assets/image1"
         SkinDetails="Hot Genshin Impact skin for Moon-THA"
         width="200px"
         height="100px"
+        preview={onPreview}
         />
+        <>
+                {Preview ? <Preview setPreview={setPreview}
+                image="/src/assets/image1"/> : null }
+                
+        </>
+        
+   
         
         </Cards>
     )
