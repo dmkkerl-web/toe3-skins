@@ -1,5 +1,5 @@
 import PreviewImg from './Preview.jsx';
-
+import importicon from "/src/assets/import-icon.png"
 import { useState } from 'react';
 function SkinCard(props){
     console.log(props.skin)
@@ -16,7 +16,7 @@ function SkinCard(props){
             </div>
            
             <div className="DownloadBtn">
-                <a href={props.skin.image} download><img src="src\assets\import-icon.png"
+                <a href={props.skin.image} download><img src={importicon}
                 width="20px"></img></a>
                 
                 <button onClick={()=>props.preview(props.skin)}>Preview</button>

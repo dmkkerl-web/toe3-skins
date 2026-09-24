@@ -1,6 +1,30 @@
 import './App.css'
 import SideBar from './SideBar'
 import { useState } from 'react'
+//importing images
+import menu from "/src/assets/icons8-menu-50.png"
+import Error from "/src/assets/toe3skins/404.png"
+import whatsApp from "/src/assets/apple.png"
+import arrowRight from "/src/assets/arrow-right.png"
+
+import facebook from "/src/assets/communication.png"
+import github from "/src/assets/github.png"
+
+import hero from "/src/assets/image1.jpeg"
+
+import linkedin from "/src/assets/linkedin (1).png"
+
+//mockup skins for trending 
+import amber from "/src/assets/toe3skins/amber.jpg"
+import animeBoy from "/src/assets/toe3skins/animeBoy.png"
+import animeGirl from "/src/assets/toe3skins/animeGirl.png"
+import eagle from "/src/assets/toe3skins/eagle.png"
+import ninja from "/src/assets/toe3skins/ninja.png"
+import scooby from "/src/assets/toe3skins/scooby.jpg"
+import shades from "/src/assets/toe3skins/shades.png"
+
+
+
 
 
 
@@ -12,7 +36,7 @@ function NavBar({setSideBar}){
   
   <h2><span>TOE3</span> SKINS</h2>
    <div className='MenuBtn'>
-        <img src='src\assets\icons8-menu-50.png'
+        <img src={menu}
       onClick={()=>{
         console.log("clicked")
         setSideBar("block");
@@ -30,7 +54,7 @@ function Hero(){
  
   return(
     <>
-    <div className='BackGround'></div>
+    <div className='BackGround'style={{"--hero-bg": `url(${hero})`}}></div>
     
     <div className='HeroContent'>
       <h2>EXPLORE AMAZING TRUCK SKINS</h2>
@@ -99,26 +123,26 @@ export default function Home({setPage}){//setPage is passed from App.jsx
           <div className="ImageTrack">
             
             <div className='ImageGroup'>
-              <Trending
-            image="/src/assets/toe3skins/amber.jpg"
+                        <Trending
+            image={amber}
             width="150px"
             height="100px"
             Description="Mera-Amber Skin"
             ></Trending>
                           <Trending
-            image="/src/assets/toe3skins/404.png"
+            image={Error}
             width="150px"
             height="100px"
             Description="404 Error Skin"
             ></Trending>
                     <Trending
-            image="/src/assets/toe3skins/animeBoy.png"
+            image={animeBoy}
             width="150px"
             height="100px"
             Description="Jujutsu Skin"
             ></Trending>
                           <Trending
-            image="/src/assets/toe3skins/animeGirl.png"
+            image={animeGirl}
             width="150px"
             height="100px"
             Description="Pink Anime Character Skin"
@@ -131,25 +155,25 @@ export default function Home({setPage}){//setPage is passed from App.jsx
             <div className='ImageGroup'>
 
                             <Trending
-            image="/src/assets/toe3skins/ninja.png"
+            image={ninja}
             width="150px"
             height="100px"
             Description="Walking Ninja Skin"
             ></Trending>
                           <Trending
-            image="/src/assets/toe3skins/eagle.png"
+            image={eagle}
             width="150px"
             height="100px"
             Description="Eagle Skin"
             ></Trending>
                     <Trending
-            image="/src/assets/toe3skins/scooby.jpg"
+            image={scooby}
             width="150px"
             height="100px"
             Description="Scooby Doo Skin"
             ></Trending>
                           <Trending
-            image="/src/assets/toe3skins/shades.png"
+            image={shades}
             width="150px"
             height="100px"
             Description="Shades Skin"
@@ -161,7 +185,7 @@ export default function Home({setPage}){//setPage is passed from App.jsx
             </div>
              <div className='NavigationBtn'>
               <button onClick={()=>{setPage("Catalogue")}}>ViewMore
-                <img src='src\assets\arrow-right.png'
+                <img src={arrowRight}
                 width="20px"></img>
               </button>
             </div>
@@ -209,21 +233,21 @@ export default function Home({setPage}){//setPage is passed from App.jsx
               <div className='ContactForm'>
                 <h3>Contact the Developer</h3>
                 <div className='ContactIcons'>
-                <img src='src\assets\apple.png'width="30px"
+                <img src={whatsApp}width="30px"
                 onClick={()=>
                   window.open(`https://wa.me/254112507193?text=${encodeURIComponent
                     ("Hello, I have a question about your TOE3 skins web App") }`)}
                     target="_blank"
                     rel="noopener noreferrer"></img>
-                <img src='src\assets\communication.png'width="30px"
+                <img src={facebook}width="30px"
                 onClick={()=>
                   window.open("https://www.facebook.com/Dev Dennis","_blank")
                 }></img>
-                <img src='src\assets\github.png'width="30px"
+                <img src={github}width="30px"
                 onClick={()=>
                   window.open("https://github.com/dmkkerl-web","_blank")
                 }></img>
-                <img src='src\assets\linkedin (1).png'width="30px"
+                <img src={linkedin}width="30px"
                 onClick={()=>
                   window.open("https://www.linkedin.com/in/dennis-mutua-a24991409","_blank")
                 }></img>

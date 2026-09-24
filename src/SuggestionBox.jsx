@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import arrowRight from "/src/assets/arrow-right.png"
 export default function Suggestions(){
     const [Suggestion ,setSuggestion]=useState("");
     function sendSuggestion(){
@@ -42,7 +42,7 @@ export default function Suggestions(){
                     
                    
                 }}>Send Suggestion
-                     <img src="src\assets\arrow-right.png"
+                     <img src={arrowRight}
                      width="20px"></img></button>
                </div>
               

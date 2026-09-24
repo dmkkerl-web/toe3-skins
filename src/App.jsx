@@ -5,6 +5,8 @@ import Catalogue from './SkinsCatalogue.jsx';
 import Publish from './PublishSkin.jsx';
 import { useState , useEffect} from 'react';
 
+import home from "/src/assets/icons8-home-50.png"
+import catalogue from "/src/assets/icons8-gallery-24.png"
 export default function MyApp(){
   const [currentPage, setPage] = useState("Home");
   //the useState below sets the skins from publish and into the catalogue
@@ -50,8 +52,8 @@ export default function MyApp(){
   return(
     <>
     <div className='NavBtns'>
-      <img onClick={()=>setPage("Home")}src='src\assets\icons8-home-50.png'></img>
-      <img onClick={()=>setPage("Catalogue")} src='src\assets\icons8-gallery-24.png'></img>
+      <img onClick={()=>setPage("Home")}src={home}></img>
+      <img onClick={()=>setPage("Catalogue")} src={catalogue}></img>
     </div>
     
       {renderPage()}
