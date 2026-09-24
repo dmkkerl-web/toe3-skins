@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 @media (max-width:700px){
-
+html{
+  scroll-behavior: smooth;
+}
   *{
     margin:0;
     box-sizing:border-box;
@@ -12,8 +14,10 @@
   width:100%;
   display:flex;
    flex-direction:column;
+   font-size:small;
+
 }
-#root span{
+.NavbarContent span{
   color:rgb(0, 255, 0);
 }
 img{
@@ -23,6 +27,11 @@ img{
 .image{
   min-height:100vh;
 }
+.Body{
+  min-height:100vh;
+  position:relative;
+  padding-bottom:70px;
+}
 .NavbarContent{
   padding:10px;
   display:flex;
@@ -31,13 +40,16 @@ img{
   align-items:center;
   background:green;
   gap:20px;
-  position:relative;
+  position:sticky;
+  top:0;
+  z-index:3;
+  
 }
 
-.MenuBtn{
+.MenuBtn img{
   position:absolute;
-  top:15px;
   left:10px;
+  top:10px;
 }
 .MenuBtn img{
   width:20px;
@@ -72,8 +84,9 @@ img{
   justify-content:space-evenly;
   width:100%;
   padding:20px;
-  background:rgba(0, 229, 0, 0.478);
-  backdrop-filter: blur(20px);
+  background:rgba(0, 229, 0, 0.571);
+  backdrop-filter: blur(40px);
+  z-index:5;
   
 
 }
@@ -86,15 +99,21 @@ img{
   justify-content:center;
   align-items:center;
   gap:10px;
-  margin-top:20px;
+align-items:flex-start;
+padding-top:10px;
+ padding-bottom:70px;
+ min-height:100vh;
+ background: linear-gradient(to bottom right,green,greenyellow);
 }
 .CardContainer{
-  border:1px solid grey;
+  border:none;
   width:200px;
+  height:auto;
   position:relative;
   color:black;
   border-radius:5px;
-  
+  box-sizing:border-box;
+  background:white;
 
 }
 .SkinImage{
@@ -104,6 +123,7 @@ img{
 }
 .SkinDetails{
   text-align:center;
+  margin-top:10px;
 }
 .ImageTrack{
  display:flex;
@@ -129,10 +149,10 @@ img{
   width:150px;
   background:white;
 }
-.Image{
+.Image img{
   width:100%;
   height:100px;
-  object-fit:cover;
+  object-fit:contain;
 }
 .Description{
   color:black;
@@ -164,50 +184,58 @@ img{
   justify-content:center;
 }
 .NavigationBtn button{
-  padding:10px 20px;
+  position:relative;
+  padding:10px 30px;
   border-radius:5px;
   border:none;
   background:rgb(105, 243, 105);
+}
+.NavigationBtn img{
+  position:absolute;
+  top:8px;
+  left:4px;
+
 }
 .NavigationBtn button:active{
   background:hsl(120, 85%, 90%);
 }
 }
 .links{
-  color:black;
-  background:rgba(240, 248, 255, 0.715);
-  backdrop-filter:blur(20px);
+  padding-top:20px;
   display:flex;
   flex-direction:column;
-
-
 }
 .links li{
       list-style:none;
       padding:15px;
       position:relative;
 }
+.links li a{
+  text-decoration:none;
+  color:black;
+}
 .links li:hover{
   cursor:pointer;
 }
 .SideBar{
+   color:black;
+  background:rgba(240, 248, 255, 0.715);
+  backdrop-filter:blur(20px);
  border:none;
- border-radius:10px;
- position:absolute;
- top:49px;
- left:0;
+ top:40px;
  width:100%;
+ position:fixed;
+ z-index:2;
 
 }
+
 .CloseBtn{
   position:absolute;
   top:10px;
-  left:400px;
+  right:10px;
+
 }
-.container{
-  padding-bottom:70px;
-  background:aliceblue;
-}
+
 .PublishForm{
   color:black;
   width:100%;
@@ -220,11 +248,12 @@ img{
   gap:20px;
 
 }
-.Buttons{
+.Button{
   display:flex;
-  justify-content:space-between;
+  flex-direction:column; 
+  width:100%;
 }
-.Buttons button{
+.Button button{
   padding:20px;
   border:none;
   border-radius:5px;
@@ -232,10 +261,7 @@ img{
 .PublishBtn{
   background:rgba(10, 222, 10, 0.665);
 }
-.DeleteBtn{
-  background:red;
- 
-}
+
 input ,select{
   padding:20px;
    outline:1px solid grey;
@@ -254,7 +280,7 @@ textarea{
   flex-direction:column;
   gap:10px;
 }
-.PublishBtn:active ,.DeleteBtn:active{
+.PublishBtn:active{
   background:white;
 }
 .PublishForm h3{
@@ -268,9 +294,7 @@ textarea{
 .Media input{
   background:white;
 }
-.Body{
-  padding-bottom:70px;
-}
+
 .DownloadBtn{
   display:flex;
   justify-content:space-evenly;
@@ -281,8 +305,154 @@ textarea{
   border:none;
   border-radius:5px;
 }
+.DownloadBtn button:active{
+  background:white;
+}
 .LightBox{
   border:1px solid lightgreen;
-  width:350px;
+  width:300px;
+  height:142px;
+  position:relative;
+
+}
+.close{
+position:absolute;
+top:0;
+right:0;
+}
+.close:hover{
+ background:red;
+}
+.LightBoxImg img{
+  width:100%;
+  height:100%;
+}
+
+.Author{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+ 
+}
+.AuthorName{
+  padding:2px;
+  color:grey;
   
+}
+.AuthorName p{
+  overflow-wrap:break-word;
+}
+.LightBoxContainer{
+ position:fixed;
+ top:50%;
+ left:50%;
+ transform:translate(-50%, -50%);
+}
+.SkinDetails span{
+
+  background:rgba(0, 255, 255, 0.792);
+  padding:5px;
+  border-radius:5px;
+  color:black;
+  margin:20px;
+}
+.SkinDetails p{
+  line-height: 20px;
+}
+.AboutSection {
+  color:black;
+  padding:10px;
+}
+.Notice{
+  color:black;
+  padding:20px;
+}
+.NoticeBox{
+  border:1px solid black;
+  display:flex;
+  flex-direction:column;
+  padding:10px;
+  border-radius:5px;
+}
+.NoticeBox h2{
+ background:yellow;
+ padding:5px;
+}
+.AboutSection p{
+  display:inline-block;
+  width:370px;
+  margin:30px;
+  list-style:none;
+
+}
+.PublishBody{
+   background:aliceblue;
+   padding-bottom:70px;
+}
+.PublishBody h2{
+  color:rgb(107, 103, 103);
+   padding-bottom:70px;
+   display:flex;
+   justify-content:center;
+   
+ 
+}
+.SuggestionsForm{
+  color:black;
+  margin:30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.SuggestionFields{
+ display:flex;
+ flex-direction:column;
+ gap:30px;
+ margin-top:20px;
+}
+.SuggestionFields textarea{
+  width:300px;
+  outline:1px solid rgba(1, 255, 9, 0.822);
+  border-radius:6px;
+}
+.SubmitSuggestionBtn{
+  display:flex;
+  justify-content:center;
+}
+.SubmitSuggestionBtn button{
+  padding:10px 40px;
+  border:none;
+  border-radius:5px;
+  background:greenyellow;
+  text-align:center;
+  position:relative;
+}
+.SubmitSuggestionBtn button:active{
+  background:white;
+}
+.SubmitSuggestionBtn button img{
+  position:absolute;
+  top:8px;
+  left:14px;
+}
+
+.Contacts{
+  color:white;
+  background:linear-gradient(to right, black,white);
+  padding:30px;
+}
+.ContactForm{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.ContactIcons{
+
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+.ContactIcons:hover{
+  cursor:pointer;
 }

@@ -3,31 +3,33 @@ import SideBar from './SideBar'
 import { useState } from 'react'
 
 
-function NavBar(){
+
+function NavBar({setSideBar}){
    
  return(
-  <div class="NavbarContent">
+  <>
+<div className="NavbarContent">
   
   <h2><span>TOE3</span> SKINS</h2>
- </div>
- )
-}
-function Hero({setSideBar}){//controls the three line icon on top left 
-  //to display the sidebar
- 
-  return(
-    <>
-    <div className='MenuBtn'>
+   <div className='MenuBtn'>
         <img src='src\assets\icons8-menu-50.png'
       onClick={()=>{
-        setSideBar("block")
+        console.log("clicked")
+        setSideBar("block");
       }}
       ></img>
       </div>
+   </div>
 
   
+  </>
 
+ )
+}
+function Hero(){
  
+  return(
+    <>
     <div className='BackGround'></div>
     
     <div className='HeroContent'>
@@ -47,9 +49,8 @@ function Trending(props){//this function just returns a Trending card with
   return(
     <div className="TrendSkin">
       <div className="Image">
-        <img src={props.image + ".jpeg"}
-        width={props.width}
-        height={props.height}
+        <img src={props.image}
+      
         ></img>
       </div>
       <div className="Description">
@@ -76,19 +77,22 @@ export default function Home({setPage}){//setPage is passed from App.jsx
     const [sideBar , setSideBar]=useState("none");
    function ShowSideBar(){
     if(sideBar ==="none"){ return ""}
-    if(sideBar ==="block")
-  //this drained me, i can pass two useState props to the same component 
-//then inside the component create the state that displays the publish form
-      {return <SideBar setSideBar={setSideBar} setPage={setPage}/> }
+    if(sideBar ==="block"){
+      return <SideBar setSideBar={setSideBar} setPage={setPage}/>
+     }
    }
 
        return(
         <div className='Body'>
+        
         <NavBar
+
+          setSideBar={setSideBar}
         />
+           {ShowSideBar()}
         <Hero
-        setSideBar={setSideBar}/>
-         {ShowSideBar()}
+        />
+        
         <Trends>
         <h3>TRENDING SKINS</h3>
 
@@ -96,28 +100,28 @@ export default function Home({setPage}){//setPage is passed from App.jsx
             
             <div className='ImageGroup'>
               <Trending
-            image="./src/assets/image1"
+            image="/src/assets/toe3skins/amber.jpg"
             width="150px"
             height="100px"
-            Description="Hot Moon THA Genshi Impact skin"
+            Description="Mera-Amber Skin"
             ></Trending>
                           <Trending
-            image="./src/assets/image1"
+            image="/src/assets/toe3skins/404.png"
             width="150px"
             height="100px"
-            Description="Hot Moon THA Genshi Impact skin"
+            Description="404 Error Skin"
             ></Trending>
                     <Trending
-            image="./src/assets/image1"
+            image="/src/assets/toe3skins/animeBoy.png"
             width="150px"
             height="100px"
-            Description="Hot Moon THA Genshi Impact skin"
+            Description="Jujutsu Skin"
             ></Trending>
                           <Trending
-            image="./src/assets/image1"
+            image="/src/assets/toe3skins/animeGirl.png"
             width="150px"
             height="100px"
-            Description="Hot Moon THA Genshi Impact skin"
+            Description="Pink Anime Character Skin"
             ></Trending>
 
 
@@ -127,28 +131,28 @@ export default function Home({setPage}){//setPage is passed from App.jsx
             <div className='ImageGroup'>
 
                             <Trending
-            image="./src/assets/image1"
+            image="/src/assets/toe3skins/ninja.png"
             width="150px"
             height="100px"
-            Description="Hot Moon THA Genshi Impact skin"
+            Description="Walking Ninja Skin"
             ></Trending>
                           <Trending
-            image="./src/assets/image1"
+            image="/src/assets/toe3skins/eagle.png"
             width="150px"
             height="100px"
-            Description="Hot Moon THA Genshi Impact skin"
+            Description="Eagle Skin"
             ></Trending>
                     <Trending
-            image="./src/assets/image1"
+            image="/src/assets/toe3skins/scooby.jpg"
             width="150px"
             height="100px"
-            Description="Hot Moon THA Genshi Impact skin"
+            Description="Scooby Doo Skin"
             ></Trending>
                           <Trending
-            image="./src/assets/image1"
+            image="/src/assets/toe3skins/shades.png"
             width="150px"
             height="100px"
-            Description="Hot Moon THA Genshi Impact skin"
+            Description="Shades Skin"
             ></Trending>
 
 
@@ -156,10 +160,79 @@ export default function Home({setPage}){//setPage is passed from App.jsx
            
             </div>
              <div className='NavigationBtn'>
-              <button onClick={()=>{setPage("Catalogue")}}>ViewMore</button>
+              <button onClick={()=>{setPage("Catalogue")}}>ViewMore
+                <img src='src\assets\arrow-right.png'
+                width="20px"></img>
+              </button>
             </div>
+            
           </Trends>
-  
+          <section className='AboutSection'id='about'>
+              <h3>About Truckers Of Europe 3 skins (TOE3)</h3>
+              <p> The TOE3 skins webApp is designed to host the best 
+                skins uploaded by volunteers for you to customize your truck 
+                or trailer and standout on every road!.
+                Anybody can easily upload their skins  by pressing on the three 
+                lines at the top left of the navbar and clicking " Publish", which
+                immediately takes you to the publish page and you're required to fill in 
+                the specified fields for 
+               
+                 <li>1.<b>Author:</b> your Name</li>
+                 <li>2.<b>SkinName:</b> Prefered name of the skin you're publishing</li>
+                 <li>3.<b>Category: </b> What truck is your skin for?</li>
+                 <li>4.<b>File attachment:</b> here you're required to upload the
+                   skin itself, you will select it from your files </li>
+               
+               then hit publish and your skin is added to the catalogue where other players
+               can be able to access it.
+
+    
+
+              </p>
+            </section>
+            <section className='Notice'>
+              <div className='NoticeBox'>
+                <h2>NOTICE</h2>
+                <ul>
+                  <li> Right now, users can publish skins for 
+                    four trucks including: (marieles, 
+                  moonTHA, stream and fiora), other options will be available soon</li>
+                  <li>
+                    This current page is just a mockup, and more features will be added soon,
+                    all important features are available.
+                  </li>
+                </ul>
+                
+              </div>
+            </section>
+            <section className='Contacts' id='contacts'>
+              <div className='ContactForm'>
+                <h3>Contact the Developer</h3>
+                <div className='ContactIcons'>
+                <img src='src\assets\apple.png'width="30px"
+                onClick={()=>
+                  window.open(`https://wa.me/254112507193?text=${encodeURIComponent
+                    ("Hello, I have a question about your TOE3 skins web App") }`)}
+                    target="_blank"
+                    rel="noopener noreferrer"></img>
+                <img src='src\assets\communication.png'width="30px"
+                onClick={()=>
+                  window.open("https://www.facebook.com/Dev Dennis","_blank")
+                }></img>
+                <img src='src\assets\github.png'width="30px"
+                onClick={()=>
+                  window.open("https://github.com/dmkkerl-web","_blank")
+                }></img>
+                <img src='src\assets\linkedin (1).png'width="30px"
+                onClick={()=>
+                  window.open("https://www.linkedin.com/in/dennis-mutua-a24991409","_blank")
+                }></img>
+                
+                </div>
+                <p>All icons sourced from Flaticon.com</p>
+                <p>&copy; 2026, DevDennis. All Rights Reserved</p>
+              </div>
+            </section>
       </div>
     )
 }
