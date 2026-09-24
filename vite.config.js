@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base:"/toe3-skins/",
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] })
