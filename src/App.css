@@ -362,14 +362,19 @@ right:0;
   line-height: 20px;
 }
 .AboutSection {
-  width: 200px;
+  display:flex;
+  flex-direction:column;
   color:black;
-  padding:10px;
+  justify-content:center;
   align-items:center;
-
+}
+.AboutSection h3{
+  text-align:center;
 }
 .AboutSection p{
-    word-break:break-all;
+  list-style: none;
+  width:250px;
+  margin-top:20px;
 }
 .Notice{
   color:black;
@@ -386,13 +391,7 @@ right:0;
  background:yellow;
  padding:5px;
 }
-.AboutSection p{
-  display:inline-block;
-  width:370px;
-  margin:30px;
-  list-style:none;
 
-}
 .PublishBody{
    background:aliceblue;
    padding-bottom:70px;
