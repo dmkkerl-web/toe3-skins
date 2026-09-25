@@ -226,8 +226,6 @@ img{
 
 }
 
-
-
 .PublishForm{
   color:black;
   width:100%;
@@ -308,9 +306,13 @@ textarea{
 
 }
 .close{
+  
 position:absolute;
 top:0;
 right:0;
+}
+.CloseBtn{
+  color:purple;
 }
 .close:hover{
  background:white;

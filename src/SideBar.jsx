@@ -1,5 +1,5 @@
 import './App.css'
-import close from "/src/assets/close.png"
+
 export default function SideBar({setSideBar,setPage}){
     return(
      <div className='SideBar'>
@@ -15,8 +15,8 @@ export default function SideBar({setSideBar,setPage}){
        }}>How can I improve this Site?</li>
       </ul>
       <div className='CloseBtn'>
-        <img src={close} width="20px" alt='close'
-        onClick={()=>setSideBar("none")}></img>
+       <p onClick={()=>setSideBar("none")}> Close</p>
+        
       </div>
       </div>
     )
