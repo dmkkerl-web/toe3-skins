@@ -8,8 +8,7 @@ function SkinCard(props){
         <div className="CardContainer">
             <div className="SkinImage">
                 <img src={props.skin.image}
-                width="200px"
-                height="100px"></img>
+                ></img>
             </div>
             <div className="SkinDetails">
             <p>{props.skin.skinName} skin for <span>{props.skin.Category}</span></p>
