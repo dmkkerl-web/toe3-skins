@@ -96,8 +96,8 @@ img{
 .CatalogueGrid{
   display:grid;
   grid-template-columns:repeat(2,minmax(150px,200px));
-  gap:3px;
   justify-content:center;
+  padding-left:30px;
  min-height:100vh;
  background: linear-gradient(to bottom right,green,greenyellow);
 }
