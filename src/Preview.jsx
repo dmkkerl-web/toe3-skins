@@ -1,5 +1,5 @@
 import './App.css'
-import close from "/src/assets/close.png"
+import close from "/src/assets/cross (1).png"
 export default function PreviewImg({setPreview, skinImage}){
     console.log(skinImage)
     return(
