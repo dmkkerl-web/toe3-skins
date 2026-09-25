@@ -88,7 +88,6 @@ img{
   background:rgba(0, 229, 0, 0.571);
   backdrop-filter: blur(40px);
   z-index:5;
-  
 
 }
 .NavBtns img{
@@ -97,12 +96,8 @@ img{
 .CatalogueGrid{
   display:grid;
   grid-template-columns:repeat(2,minmax(150px,200px));
+  gap:3px;
   justify-content:center;
-  align-items:center;
-  gap:10px;
-align-items:flex-start;
-padding-top:10px;
- padding-bottom:70px;
  min-height:100vh;
  background: linear-gradient(to bottom right,green,greenyellow);
 }
@@ -110,7 +105,7 @@ padding-top:10px;
   margin-top:30px;
   border:none;
   width:150px;
-  height:200px;
+  height:fit-content;
   color:black;
   border-radius:5px;
   background:white;

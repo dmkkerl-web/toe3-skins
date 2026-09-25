@@ -26,10 +26,9 @@ export default function Suggestions(){
         <div className="SuggestionsForm">
        
                <p>Hey there!, thankyou for taking your time 
-                to leave a suggestion or suggestions to help me
+                to leave a suggestion to help me
                 make this website better.
-                Below you'll just press the button which will open your gmail
-                and you can send your suggestion to me.
+            
                </p>
                 <div className="SuggestionFields">
 
