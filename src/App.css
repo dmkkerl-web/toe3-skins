@@ -221,7 +221,7 @@ img{
  border:none;
  top:40px;
  width:100%;
- position:sticky;
+ position:absolute;
  z-index:2;
 
 }

@@ -1,11 +1,14 @@
 import './App.css'
+import close from "/src/assets/close.png"
 export default function PreviewImg({setPreview, skinImage}){
     console.log(skinImage)
     return(
         <div className="LightBoxContainer">
                     <div className="LightBox">
             <div className='close'>
-                <img src="./src/assets/close.png"
+                <img src={close}
+                alt='close'
+
                 onClick={()=>setPreview(false)}
                 width="20px"></img>
             </div>

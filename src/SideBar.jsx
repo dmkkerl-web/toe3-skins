@@ -15,7 +15,7 @@ export default function SideBar({setSideBar,setPage}){
        }}>How can I improve this Site?</li>
       </ul>
       <div className='CloseBtn'>
-        <img src={close} width="20px"
+        <img src={close} width="20px" alt='close'
         onClick={()=>setSideBar("none")}></img>
       </div>
       </div>
